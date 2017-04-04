@@ -29,7 +29,7 @@ if __name__ == "__main__":
              FROM symbol AS sym
              INNER JOIN daily_price AS dp
              ON dp.symbol_id = sym.id
-             WHERE sym.ticker = %s
+             WHERE sym.ticker = '%s'
              ORDER BY dp.price_date ASC;""" % ticker
 
     # Create a pandas dataframe from the SQL query
